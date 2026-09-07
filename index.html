@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hot Stuff — Sweet Chilli Jam</title>
+<meta name="description" content="Hot Stuff sweet chilli jam — grown and jarred by hand in New Zealand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <span class="wordmark">Hot&nbsp;Stuff</span>
+  <nav class="topbar-nav">
+    <a href="#story">Story</a>
+    <a href="#watch">Watch</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-art" aria-hidden="true">
+    <!-- placeholder chilli illustration, swap for a real photo via the CMS -->
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" class="hero-svg">
+      <rect width="1200" height="800" fill="#241a12"/>
+      <g opacity="0.9">
+        <path d="M300 180 C260 200 240 260 270 320 C300 380 380 400 430 360 C480 320 480 250 440 210 C410 180 340 160 300 180 Z" fill="#b23a2e"/>
+        <path d="M300 180 C280 150 260 120 270 90" stroke="#4b5842" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M700 420 C650 440 620 510 660 570 C700 630 790 640 840 590 C890 540 880 460 830 430 C790 405 740 400 700 420 Z" fill="#d9a62e"/>
+        <path d="M700 420 C690 390 680 350 700 320" stroke="#4b5842" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M950 150 C910 175 895 235 930 290 C965 345 1045 355 1085 310 C1125 265 1115 195 1070 165 C1035 142 990 130 950 150 Z" fill="#b23a2e"/>
+        <path d="M950 150 C935 120 925 85 940 55" stroke="#4b5842" stroke-width="10" fill="none" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-copy">
+    <h1 id="hero-heading">Hot Stuff</h1>
+    <p id="hero-subheading">Sweet chilli jam, grown and jarred by hand.</p>
+    <a href="#shop" class="btn btn-primary">Shop the jam</a>
+  </div>
+</section>
+
+<div class="strip" id="location-line">Grown and made in New Zealand</div>
+
+<section class="story" id="story">
+  <div class="story-art" aria-hidden="true">
+    <svg viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" class="story-svg">
+      <rect width="600" height="700" fill="#eee2c4"/>
+      <g fill="none" stroke="#b23a2e" stroke-width="6" stroke-linecap="round">
+        <path d="M150 550 C150 500 130 460 150 420 C170 380 220 370 240 400"/>
+        <path d="M280 580 C270 520 300 470 280 420 C260 370 200 360 190 400"/>
+        <path d="M400 560 C420 500 400 450 430 410 C460 370 510 380 520 420"/>
+      </g>
+      <g fill="#4b5842">
+        <ellipse cx="150" cy="410" rx="16" ry="24"/>
+        <ellipse cx="240" cy="392" rx="16" ry="24"/>
+        <ellipse cx="430" cy="402" rx="16" ry="24"/>
+      </g>
+    </svg>
+  </div>
+  <div class="story-copy">
+    <h2 id="story-heading">From the chilli patch to the pantry</h2>
+    <p id="story-text">Every jar starts in the garden. The chillies are grown, picked and cooked down in small batches — nothing rushed, nothing mass-produced. What comes out is a jam that's sweet first, with a slow, honest heat that builds behind it.</p>
+  </div>
+</section>
+
+<section class="video-section" id="watch">
+  <div class="video-copy">
+    <h2 id="video-heading">Watch it happen</h2>
+    <p id="video-caption">From pick to jar, in one batch.</p>
+  </div>
+  <div class="video-square" id="video-square">
+    <!-- square 1080x1080 video player; swap the source via the CMS -->
+    <svg viewBox="0 0 100 100" class="video-placeholder-icon" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#d9a62e" stroke-width="2"/>
+      <path d="M42 34 L70 50 L42 66 Z" fill="#d9a62e"/>
+    </svg>
+    <p class="video-placeholder-text">Add a square (1080&times;1080) video via the CMS</p>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <h2>In the patch &amp; in the kitchen</h2>
+  <div class="gallery-grid" id="gallery-grid">
+    <!-- up to 20 images injected by js/main.js from content/gallery.json -->
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<section class="shop" id="shop">
+  <h2>The jars</h2>
+  <div class="product-grid" id="product-grid">
+    <!-- products injected by js/main.js from content/products.json -->
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Say hello</h2>
+  <p>Questions about an order, a bulk request for a market or a cafe, or just want to say the jam is good? Get in touch.</p>
+  <a href="mailto:hello@hotstuffjam.co.nz" class="contact-email">hello@hotstuffjam.co.nz</a>
+</section>
+
+<footer class="site-footer">
+  <span>&copy; <span id="year"></span> Hot Stuff</span>
+  <a href="/admin/" class="admin-link">Edit site</a>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

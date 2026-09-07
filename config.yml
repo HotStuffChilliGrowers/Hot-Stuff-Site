@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+format: json
+
+collections:
+  - name: "site"
+    label: "Homepage"
+    files:
+      - file: "content/site.json"
+        name: "site"
+        label: "Homepage content"
+        fields:
+          - { label: "Hero heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero subheading", name: "hero_subheading", widget: "string" }
+          - { label: "Hero photo (full-page image at the top)", name: "hero_image", widget: "image", required: false }
+          - { label: "Story heading", name: "story_heading", widget: "string" }
+          - { label: "Story text", name: "story_text", widget: "text" }
+          - { label: "Story photo", name: "story_image", widget: "image", required: false }
+          - { label: "Small strip line under the hero", name: "location_line", widget: "string" }
+          - { label: "PayPal email (where payments are sent)", name: "paypal_email", widget: "string" }
+          - { label: "Video section heading", name: "video_heading", widget: "string" }
+          - { label: "Video section caption", name: "video_caption", widget: "string" }
+          - { label: "Video (square, 1080x1080 recommended)", name: "video_file", widget: "file", required: false }
+          - { label: "Video poster image (shown before play)", name: "video_poster", widget: "image", required: false }
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - file: "content/gallery.json"
+        name: "gallery"
+        label: "Photo gallery (up to 20 images)"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            max: 20
+            summary: "{{caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
+
+  - name: "products"
+    label: "Products"
+    files:
+      - file: "content/products.json"
+        name: "products"
+        label: "Jam varieties"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{name}} — ${{price}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price (NZD, numbers only e.g. 12.00)", name: "price", widget: "string" }
+              - { label: "Heat level (1 = mild, 5 = very hot)", name: "heat", widget: "number", min: 1, max: 5, value_type: "int", default: 3 }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Description", name: "description", widget: "text" }
