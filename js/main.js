@@ -19,6 +19,9 @@ function productCard(p) {
          </svg>
        </div>`;
 
+  const shippingFlat = window.__HS_SHIPPING_FLAT__ || "0";
+  const shippingExtra = window.__HS_SHIPPING_EXTRA__ || "0";
+
   return `
     <div class="product-card">
       ${image}
@@ -35,6 +38,12 @@ function productCard(p) {
             <input type="hidden" name="item_name" value="Hot Stuff Chilli Jam - ${p.name}">
             <input type="hidden" name="amount" value="${p.price}">
             <input type="hidden" name="currency_code" value="NZD">
+            <input type="hidden" name="shipping" value="${shippingFlat}">
+            <input type="hidden" name="shipping2" value="${shippingExtra}">
+            <label class="qty-label">
+              Qty
+              <input class="qty-input" type="number" name="quantity" value="1" min="1" max="20">
+            </label>
             <button type="submit">Buy jar</button>
           </form>
         </div>
@@ -58,6 +67,11 @@ async function init() {
     document.getElementById("location-line").textContent = site.location_line || "";
     document.title = `${site.hero_heading || "Hot Stuff"} — Sweet Chilli Jam`;
     window.__HS_PAYPAL_EMAIL__ = site.paypal_email || "";
+    window.__HS_SHIPPING_FLAT__ = site.shipping_flat_rate || "0";
+    window.__HS_SHIPPING_EXTRA__ = site.shipping_extra_per_jar || "0";
+
+    const shippingNoteEl = document.getElementById("shipping-note");
+    if (shippingNoteEl) shippingNoteEl.textContent = site.shipping_note || "";
 
     if (site.hero_image) {
       const heroArt = document.querySelector(".hero-art");

@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: HotStuffChilliGrowers/Hot-Stuff-Site
+  name: git-gateway
   branch: main
 
 media_folder: "images/uploads"
@@ -28,6 +27,9 @@ collections:
           - { label: "Video section caption", name: "video_caption", widget: "string" }
           - { label: "Video (square, 1080x1080 recommended)", name: "video_file", widget: "file", required: false }
           - { label: "Video poster image (shown before play)", name: "video_poster", widget: "image", required: false }
+          - { label: "Courier cost for the first jar (NZD)", name: "shipping_flat_rate", widget: "string" }
+          - { label: "Extra courier cost per additional jar (NZD)", name: "shipping_extra_per_jar", widget: "string" }
+          - { label: "Packaging & courier note (shown above the jars)", name: "shipping_note", widget: "string" }
 
   - name: "gallery"
     label: "Gallery"

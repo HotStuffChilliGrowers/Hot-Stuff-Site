@@ -304,7 +304,13 @@ h1, h2 {
 .shop h2 {
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   color: var(--chilli-dark);
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+}
+
+.shipping-note {
+  color: #6b5f4d;
+  font-size: 0.9rem;
+  margin: 0 0 50px;
 }
 
 .product-grid {
@@ -371,6 +377,30 @@ h1, h2 {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
+}
+
+.buy-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #6b5f4d;
+}
+
+.qty-input {
+  width: 48px;
+  padding: 8px 6px;
+  border: 1px solid rgba(32,24,17,0.25);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
 }
 
 .product-price {
